@@ -1,0 +1,32 @@
+body{
+  margin:0;
+  font-family: Helvetica, Arial, sans-serif;
+  background:#fff;
+}
+
+header{
+  text-align:center;
+  padding:40px;
+}
+
+nav a{
+  margin:0 15px;
+  text-decoration:none;
+  color:black;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  padding:40px;
+}
+
+.show img{
+  width:100%;
+}
+
+.show{
+  text-decoration:none;
+  color:black;
+}
