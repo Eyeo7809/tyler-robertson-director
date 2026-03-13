@@ -9,17 +9,17 @@ header{
   color:white;
 }
 
-header.left-header{
+nav.left-header{
   text-align: left;
   padding: 20px;
 }
 
-header.right-header{
+nav.right-header{
   text-align: right;
   padding: 20px;
 }
 
-header.title{
+h1.title{
   text-align: center;
   padding: 20px;
 }
@@ -27,7 +27,7 @@ header.title{
 nav a{
   margin:0 15px;
   text-decoration:none;
-  color:black;
+  color: white;
 }
 
 .grid{
