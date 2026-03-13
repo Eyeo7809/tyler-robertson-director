@@ -1,156 +1,124 @@
-body{
-  margin:0;
+/* --- GLOBAL STYLES --- */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
   font-family: "Urbanist", sans-serif;
-  background:#fff;
+  background: #fff;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; /* Keeps the edge-to-edge look clean */
 }
 
-header{
+/* --- HEADER --- */
+header {
   background-image: linear-gradient(to right, #feaf77, #ffd05e, #56c6b1, #ff4ab4, #feaf77);
-  color:white;
-
+  color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 40px;
 }
 
-h1.title{
+h1.title {
   margin: 0;
   padding: 20px;
   flex: 1;
   text-align: center;
+  font-weight: 800;
 }
 
-.left-header, .right-header{
+.left-header, .right-header {
   flex: 1;
   display: flex;
 }
 
-.right-header{
+.right-header {
   justify-content: flex-end;
 }
 
-
-nav a{
-  margin:0 15px;
-  text-decoration:none;
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
   color: white;
   white-space: nowrap;
+  font-weight: 500;
 }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-  padding:40px;
-}
-
-.show img{
-  width:100%;
-}
-
-.show{
-  text-decoration:none;
-  color:black;
-}
-
-.heading{
+.heading {
   text-align: center;
-  padding: 20px 20px 40px 40px;
+  padding: 40px 20px;
 }
 
-#Hover Stuff
-/* 1. Set up the container for absolute positioning */
+/* --- THE FULL-WIDTH GRID --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Base: 2 columns */
+  width: 100%;
+  gap: 0; /* Images touch each other */
+  padding: 0;
+}
+
+/* --- THE SHOW ITEMS (HOVER ANCHOR) --- */
 .show {
-  position: relative;
+  position: relative; /* This anchors the title and overlay to THIS box */
   text-decoration: none;
-  overflow: hidden; /* Contains the image and hover elements */
-  display: block; /* Ensure it takes up full space */
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Keeps side-by-side images consistent */
 }
 
-/* 2. Style the image */
+/* The 2-1-2 Logic */
+.show:nth-child(3n) {
+  grid-column: span 2; /* Every 3rd image takes up the full width */
+  aspect-ratio: 21 / 9; /* Makes the wide image slightly shorter/cinematic */
+}
+
 .show img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Prevents stretching */
   display: block;
-  transition: transform 0.4s ease; /* Smooth zoom for a nice effect */
+  transition: transform 0.6s ease;
 }
 
-/* 3. The Modern Hover Overlay (Pseudo-element) */
+/* --- HOVER ELEMENTS --- */
+
+/* The Dimming Overlay */
 .show::after {
-  content: ""; /* Required to render */
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  
-  /* Creates the overlay (slightly darker background) */
-  background: rgba(0, 0, 0, 0.65); /* Modern and subtle dimming */
-  
-  /* Initial state: Hidden */
+  inset: 0; /* Covers the whole box */
+  background: rgba(0, 0, 0, 0.7); /* High contrast for text */
   opacity: 0;
-  transition: opacity 0.4s ease; /* Match transitions for smoothness */
-  
-  z-index: 1; /* Puts overlay on top of the image */
+  transition: opacity 0.4s ease;
+  z-index: 1;
 }
 
-/* 4. Style the Text - Making it fully readable */
+/* The Title Text */
 .show h3 {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Centers the text perfectly */
-  
+  transform: translate(-50%, -50%); /* Dead center */
   margin: 0;
-  width: 90%; /* Leaves space on the sides for text-wrapping */
+  width: 90%;
   text-align: center;
-  
-  /* Text aesthetics - white for maximum contrast */
-  color: white; 
-  font-family: 'Urbanist', sans-serif;
-  font-weight: 700; /* Medium-bold for readability */
+  color: white;
+  font-weight: 700;
   letter-spacing: 1px;
-  
-  /* Initial state: Hidden */
   opacity: 0;
-  transition: opacity 0.4s ease; /* Match transitions */
-  
-  z-index: 2; /* Puts text on top of the overlay */
-  
-  pointer-events: none; /* Mouse actions (clicking) go *through* the text to the link */
+  transition: opacity 0.4s ease;
+  z-index: 2; /* Sits on top of overlay */
+  pointer-events: none;
 }
 
-/* --- THE HOVER ACTION --- */
-
-/* When hovering over .show, trigger the overlay, text, and image zoom */
+/* --- HOVER ACTIONS --- */
 .show:hover img {
-  transform: scale(1.08); /* Optional: slight, dynamic zoom */
+  transform: scale(1.05);
 }
 
-.show:hover::after {
-  opacity: 1; /* Shows the dimming overlay */
-}
-
+.show:hover::after, 
 .show:hover h3 {
-  opacity: 1; /* Shows the title */
-}
-
-#Grid stuff
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Creates two equal columns */
-  gap: 0; /* "All right next to each other" */
-  padding: 0; 
-}
-
-/* The Magic Logic: Selects every 3rd item starting from the 3rd one */
-/* Item 1 & 2 = Side by side (default) */
-/* Item 3 = Spans full width */
-/* Item 4 & 5 = Side by side */
-/* Item 6 = Spans full width */
-.show:nth-child(3n) {
-  grid-column: span 2;
+  opacity: 1;
 }
