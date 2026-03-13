@@ -5,8 +5,23 @@ body{
 }
 
 header{
-  text-align:center;
-  padding:40px;
+  background-image: linear-gradient(to right, #feaf77, #ffd05e, #56c6b1, #ff4ab4, #feaf77);
+  color:white;
+}
+
+.left-header{
+  text-align: left;
+  padding: 20px;
+}
+
+.right-header{
+  text-align: right;
+  padding: 20px;
+}
+
+.title{
+  text-align: center;
+  padding: 20px;
 }
 
 nav a{
