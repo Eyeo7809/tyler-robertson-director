@@ -9,17 +9,17 @@ header{
   color:white;
 }
 
-.left-header{
+header.left-header{
   text-align: left;
   padding: 20px;
 }
 
-.right-header{
+header.right-header{
   text-align: right;
   padding: 20px;
 }
 
-.title{
+header.title{
   text-align: center;
   padding: 20px;
 }
