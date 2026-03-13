@@ -7,27 +7,35 @@ body{
 header{
   background-image: linear-gradient(to right, #feaf77, #ffd05e, #56c6b1, #ff4ab4, #feaf77);
   color:white;
-}
 
-nav.left-header{
-  text-align: left;
-  padding: 20px;
-}
-
-nav.right-header{
-  text-align: right;
-  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
 }
 
 h1.title{
-  text-align: center;
+  margin: 0;
   padding: 20px;
+  flex: 1;
+  text-align: center;
 }
+
+.left-header, .right-header{
+  flex: 1;
+  display: flex;
+}
+
+.right-header{
+  justify-content: flex-end;
+}
+
 
 nav a{
   margin:0 15px;
   text-decoration:none;
   color: white;
+  white-space: nowrap;
 }
 
 .grid{
