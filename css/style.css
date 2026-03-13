@@ -54,3 +54,103 @@ nav a{
   text-decoration:none;
   color:black;
 }
+
+.heading{
+  text-align: center;
+  padding: 20px 20px 40px 40px;
+}
+
+#Hover Stuff
+/* 1. Set up the container for absolute positioning */
+.show {
+  position: relative;
+  text-decoration: none;
+  overflow: hidden; /* Contains the image and hover elements */
+  display: block; /* Ensure it takes up full space */
+}
+
+/* 2. Style the image */
+.show img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease; /* Smooth zoom for a nice effect */
+}
+
+/* 3. The Modern Hover Overlay (Pseudo-element) */
+.show::after {
+  content: ""; /* Required to render */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* Creates the overlay (slightly darker background) */
+  background: rgba(0, 0, 0, 0.65); /* Modern and subtle dimming */
+  
+  /* Initial state: Hidden */
+  opacity: 0;
+  transition: opacity 0.4s ease; /* Match transitions for smoothness */
+  
+  z-index: 1; /* Puts overlay on top of the image */
+}
+
+/* 4. Style the Text - Making it fully readable */
+.show h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the text perfectly */
+  
+  margin: 0;
+  width: 90%; /* Leaves space on the sides for text-wrapping */
+  text-align: center;
+  
+  /* Text aesthetics - white for maximum contrast */
+  color: white; 
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 700; /* Medium-bold for readability */
+  letter-spacing: 1px;
+  
+  /* Initial state: Hidden */
+  opacity: 0;
+  transition: opacity 0.4s ease; /* Match transitions */
+  
+  z-index: 2; /* Puts text on top of the overlay */
+  
+  pointer-events: none; /* Mouse actions (clicking) go *through* the text to the link */
+}
+
+/* --- THE HOVER ACTION --- */
+
+/* When hovering over .show, trigger the overlay, text, and image zoom */
+.show:hover img {
+  transform: scale(1.08); /* Optional: slight, dynamic zoom */
+}
+
+.show:hover::after {
+  opacity: 1; /* Shows the dimming overlay */
+}
+
+.show:hover h3 {
+  opacity: 1; /* Shows the title */
+}
+
+#Grid stuff
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Creates two equal columns */
+  gap: 0; /* "All right next to each other" */
+  padding: 0; 
+}
+
+/* The Magic Logic: Selects every 3rd item starting from the 3rd one */
+/* Item 1 & 2 = Side by side (default) */
+/* Item 3 = Spans full width */
+/* Item 4 & 5 = Side by side */
+/* Item 6 = Spans full width */
+.show:nth-child(3n) {
+  grid-column: span 2;
+}
