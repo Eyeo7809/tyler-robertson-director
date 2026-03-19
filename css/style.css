@@ -46,7 +46,15 @@ nav a {
 
 .heading {
   text-align: center;
-  padding: 40px 20px;
+  padding: 100px 20px;
+}
+
+.heading h2 {
+  font-size: 3rem;
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: -1px;
+  text-transform: uppercase;
 }
 
 /* --- THE FULL-WIDTH GRID --- */
