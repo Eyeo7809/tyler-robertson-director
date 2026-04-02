@@ -9,21 +9,21 @@
     <link rel="icon" href="../images/websiteImages/PortfolioWebsiteIcon.png" type="image/png">
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        /* Production Specific Styles */
         .production-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            font-family: 'Urbanist', sans-serif;
         }
 
+        /* Credits Styling */
         .credits-section {
             display: flex;
             justify-content: space-between;
-            background: #f9f9f9; /* Subtle contrast */
+            background: #f9f9f9;
             padding: 30px;
             border-radius: 8px;
             margin-bottom: 40px;
-            font-family: 'Urbanist', sans-serif;
         }
 
         .credits-list {
@@ -43,28 +43,52 @@
             margin-right: 10px;
         }
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .gallery-grid img {
+        /* NEW Gallery Styles */
+        .main-stage {
             width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 4px;
-            transition: transform 0.3s ease;
+            height: 600px;
+            background: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
         }
 
-        .gallery-grid img:hover {
-            transform: scale(1.02);
+        #current-photo {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: opacity 0.3s ease;
+        }
+
+        .filmstrip {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 10px 0;
+            scrollbar-width: thin;
+        }
+
+        .filmstrip img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 4px;
+            opacity: 0.5;
+            transition: 0.3s;
+        }
+
+        .filmstrip img:hover, .filmstrip img.active {
+            opacity: 1;
+            box-shadow: 0 0 0 2px #333;
         }
 
         @media (max-width: 768px) {
-            .credits-section {
-                flex-direction: column;
-            }
+            .credits-section { flex-direction: column; }
+            .main-stage { height: 350px; }
         }
     </style>
 </head>
@@ -77,9 +101,7 @@
         <a href="../resume.html">Resume</a>
         <a href="../upnext.html">Up Next</a>
     </nav>
-
     <h1 class="title">Tyler Robertson</h1>
-
     <nav class="right-header">
         <a href="../about.html">About</a>
         <a href="../contact.html">Contact</a>
@@ -98,7 +120,7 @@
             <ul class="credits-list">
                 <li><strong>Director:</strong> Tyler Robertson</li>
                 <li><strong>Stage Manager:</strong> Arin Anderson</li>
-                <li><strong>Music Direction: </strong> Amy Ziuckovski</li>
+                <li><strong>Music Direction:</strong> Amy Ziuckovski</li>
                 <li><strong>Choreography:</strong> Brittany</li>
                 <li><strong>Costume Design:</strong> Lisa Martin</li>
                 <li><strong>Lighting Design:</strong> Jacob Czelusta</li>
@@ -113,24 +135,50 @@
         </div>
     </section>
 
-    <section class="gallery-grid">
-        <img src="images\Portfolio Stuff\Frozen Jr\TitlePictureFrozen.jpg" alt="Production Photo 0">
-        <img src="images\Portfolio Stuff\Frozen Jr\DSC_1297.jpg" alt="Production Photo 1">
-        <img src="images\Portfolio Stuff\Frozen Jr\DSC_1319.jpg" alt="Production Photo 2">
-        <img src="images\Portfolio Stuff\Frozen Jr\DSC_1340.jpg" alt="Production Photo 3">
-        <img src="images\Portfolio Stuff\Frozen Jr\DSC_1356.jpg" alt="Production Photo 4">
-        <img src="images\Portfolio Stuff\Frozen Jr\DSC_1362.jpg" alt="Production Photo 5">
-        <img src="images\Portfolio Stuff\Frozen Jr\DSC_1380.jpg" alt="Production Photo 6">
-        <img src="images\Portfolio Stuff\Frozen Jr\DSC_1416.jpg" alt="Production Photo 7">
-        <img src="images\Portfolio Stuff\Frozen Jr\DSC_1447.jpg" alt="Production Photo 8">
-        <img src="images\Portfolio Stuff\Frozen Jr\DSC_1474.jpg" alt="Production Photo 9">
-        <img src="images\Portfolio Stuff\Frozen Jr\DSC_1496.jpg" alt="Production Photo 10">
-        <img src="images\Portfolio Stuff\Frozen Jr\DSC_1509.jpg" alt="Production Photo 11">
-        <img src="images\Portfolio Stuff\Frozen Jr\DSC_1513.jpg" alt="Production Photo 12">
-        <img src="images\Portfolio Stuff\Frozen Jr\DSC_1526.jpg" alt="Production Photo 13">
+    <section class="gallery-wrapper">
+        <div class="main-stage">
+            <img id="current-photo" src="images/Portfolio Stuff/Frozen Jr/TitlePictureFrozen.jpg" alt="Featured Photo">
+        </div>
+
+        <div class="filmstrip">
+            <img src="images/Portfolio Stuff/Frozen Jr/TitlePictureFrozen.jpg" class="active" onclick="switchPhoto(this)">
+            <img src="images/Portfolio Stuff/Frozen Jr/DSC_1297.jpg" onclick="switchPhoto(this)">
+            <img src="images/Portfolio Stuff/Frozen Jr/DSC_1319.jpg" onclick="switchPhoto(this)">
+            <img src="images/Portfolio Stuff/Frozen Jr/DSC_1340.jpg" onclick="switchPhoto(this)">
+            <img src="images/Portfolio Stuff/Frozen Jr/DSC_1356.jpg" onclick="switchPhoto(this)">
+            <img src="images/Portfolio Stuff/Frozen Jr/DSC_1362.jpg" onclick="switchPhoto(this)">
+            <img src="images/Portfolio Stuff/Frozen Jr/DSC_1380.jpg" onclick="switchPhoto(this)">
+            <img src="images/Portfolio Stuff/Frozen Jr/DSC_1416.jpg" onclick="switchPhoto(this)">
+            <img src="images/Portfolio Stuff/Frozen Jr/DSC_1447.jpg" onclick="switchPhoto(this)">
+            <img src="images/Portfolio Stuff/Frozen Jr/DSC_1474.jpg" onclick="switchPhoto(this)">
+            <img src="images/Portfolio Stuff/Frozen Jr/DSC_1496.jpg" onclick="switchPhoto(this)">
+            <img src="images/Portfolio Stuff/Frozen Jr/DSC_1509.jpg" onclick="switchPhoto(this)">
+            <img src="images/Portfolio Stuff/Frozen Jr/DSC_1513.jpg" onclick="switchPhoto(this)">
+            <img src="images/Portfolio Stuff/Frozen Jr/DSC_1526.jpg" onclick="switchPhoto(this)">
+        </div>
     </section>
 
 </main>
+
+<script>
+    function switchPhoto(element) {
+        const stage = document.getElementById('current-photo');
+        
+        // Fade out
+        stage.style.opacity = 0;
+        
+        setTimeout(() => {
+            stage.src = element.src;
+            // Fade back in
+            stage.style.opacity = 1;
+        }, 250);
+
+        // Update active thumbnail
+        const thumbs = document.querySelectorAll('.filmstrip img');
+        thumbs.forEach(t => t.classList.remove('active'));
+        element.classList.add('active');
+    }
+</script>
 
 </body>
 </html>
