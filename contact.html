@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact | Tyler Robertson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/websiteImages/PortfolioWebsiteIcon.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            font-family: 'Urbanist', sans-serif;
+        }
+
+        .contact-intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            background: #fff;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        label {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input, textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: 'Urbanist', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #333;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-button {
+            grid-column: span 2;
+            padding: 15px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .submit-button:hover {
+            background-color: #555;
+        }
+
+        @media (max-width: 600px) {
+            .contact-form {
+                grid-template-columns: 1fr;
+            }
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+            .submit-button {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav class="left-header">
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="upnext.html">Up Next</a>
+    </nav>
+
+    <h1 class="title">Tyler Robertson</h1>
+
+    <nav class="right-header">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="heading">
+    <h2>Get In Touch</h2>
+</section>
+
+<main class="contact-container">
+    <div class="contact-intro">
+        <p>Whether you're interested in a collaboration, have a question about a past project, or just want to say hello—I'd love to hear from you.</p>
+    </div>
+
+    <form action="https://formspree.io/f/meeplnjp" method="POST" class="contact-form">
+        
+        <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" name="name" id="name" placeholder="Enter your name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" name="_replyto" id="email" placeholder="email@example.com" required>
+        </div>
+
+        <div class="form-group full-width">
+            <label for="subject">Subject</label>
+            <input type="text" name="subject" id="subject" placeholder="Production Inquiry / Collaboration">
+        </div>
+
+        <div class="form-group full-width">
+            <label for="message">Message</label>
+            <textarea name="message" id="message" placeholder="Write your message here..." required></textarea>
+        </div>
+
+        <input type="text" name="_gotcha" style="display:none">
+
+        <button type="submit" class="submit-button">Send Message</button>
+    </form>
+</main>
+
+</body>
+</html>

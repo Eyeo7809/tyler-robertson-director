@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume | Tyler Robertson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/websiteImages/PortfolioWebsiteIcon.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .resume-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+            font-family: 'Urbanist', sans-serif;
+        }
+
+        .resume-viewer {
+            width: 100%;
+            height: 1100px; /* Standard height for an 8.5x11 sheet */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        .download-button:hover {
+            background-color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .resume-viewer {
+                height: 600px; /* Shorter for mobile devices */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav class="left-header">
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="upnext.html">Up Next</a>
+    </nav>
+
+    <h1 class="title">Tyler Robertson</h1>
+
+    <nav class="right-header">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="heading">
+    <h2>Resume</h2>
+</section>
+
+<main class="resume-container">
+
+    <iframe 
+        src="../DirectingPortfolioWebsite/images/ResumeThings/Theatrical Resume Mar 2026.pdf" 
+        class="resume-viewer" 
+        frameborder="0">
+    </iframe>
+
+    <div style="margin-top: 20px;">
+        <p>Having trouble viewing? Download the PDF directly:</p>
+        <a href="../DirectingPortfolioWebsite/images/ResumeThings/Theatrical Resume Mar 2026.pdf" class="download-button" download>
+            Download Resume
+        </a>
+    </div>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About | Tyler Robertson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/websiteImages/PortfolioWebsiteIcon.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr; /* Headshot 40%, Text 60% */
+            gap: 60px;
+            align-items: start;
+            font-family: 'Urbanist', sans-serif;
+        }
+
+        .headshot-column img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .content-column h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .content-column h2 {
+            font-size: 2.5rem;
+            margin-top: 0;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .artistic-statement {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .biography {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #666;
+        }
+
+        @media (max-width: 900px) {
+            .about-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding-top: 20px;
+            }
+            .headshot-column {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav class="left-header">
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="upnext.html">Up Next</a>
+    </nav>
+
+    <h1 class="title">Tyler Robertson</h1>
+
+    <nav class="right-header">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main class="about-container">
+    
+    <section class="headshot-column">
+        <img src="images/AboutStuff/Headshot.jpeg" alt="Tyler Robertson Headshot">
+    </section>
+
+    <section class="content-column">
+        <h3>Director & Developer</h3>
+        <h2>Artistic Statement</h2>
+        
+        <div class="artistic-statement">
+            <p>
+                I believe in this philosophy: people change people.  That is what drives my art.
+                I want to create work that changes people, and not just the people in the audience.
+                I want the cast and the production team to come away making relationships and expanding
+                their ideas on artistry and the world.  I want the audience to have a mirror held up to
+                them that, whether they like it or not, forces them to think about themselves, and,
+                hopefully, inspires some change for the better.  Those are the kinds of stories I want
+                to tell and the experiences I want to create.
+            </p>
+        </div>
+
+        <div class="biography">
+            <h2>Biography</h2>
+            <p>
+                Tyler Robertson is a director and designer currently completing a double major 
+                in Directing for Theatre and Video Game Design and Development at Ball State University. 
+                With a focus on musical theatre, new works, and multimodal works, Tyler has directed 
+                productions ranging from contemporary musicals like <em>Ordinary Days</em> 
+                to youth theatre staples like <em>Frozen Jr.</em>, and has dipped his toes into
+                just about every aspect of production, from light and sound design to playwriting
+                and stage management.  He is willing to do whatever is needed for the production.
+            </p>
+            <p>
+                When not in the rehearsal room, he can be found working on his indie dev game
+                projects (like <a href="https://refractive-studio.itch.io/cryptid-zoo" class="show">Crytid Zoo</a>), music directing his acapella group
+                <a href="https://www.instagram.com/sedoctavebsu/" class="show">Sedoctave</a>, or making YouTube videos on his channel <a href="https://www.youtube.com/@Eyeo7809" class="show">Tyler Does Stuff</a>!
+        </div>
+    </section>
+
+</main>
+
+</body>
+</html>

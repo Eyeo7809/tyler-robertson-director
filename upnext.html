@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Up Next | Tyler Robertson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/websiteImages/PortfolioWebsiteIcon.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .up-next-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            font-family: 'Urbanist', sans-serif;
+        }
+
+        /* Featured Show Styling */
+        .featured-next {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background: #f4f4f4;
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 60px;
+            align-items: center;
+        }
+
+        .featured-poster img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .featured-info h3 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .featured-info .date-location {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        /* Upcoming Grid */
+        .upcoming-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .upcoming-card {
+            text-align: center;
+            transition: 0.3s ease;
+        }
+
+        .upcoming-card img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .upcoming-card h4 {
+            font-size: 1.4rem;
+            margin: 5px 0;
+        }
+
+        .upcoming-card p {
+            color: #777;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .featured-next {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav class="left-header">
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="upnext.html">Up Next</a>
+    </nav>
+
+    <h1 class="title">Tyler Robertson</h1>
+
+    <nav class="right-header">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="heading">
+    <h2>Current & Upcoming Projects</h2>
+</section>
+
+<main class="up-next-container">
+
+    <section class="featured-next">
+        <div class="featured-poster">
+            <img src="images/upNextThings/Spelling Bee Poster.png" alt="Featured Show Poster">
+        </div>
+        <div class="featured-info">
+            <span style="text-transform: uppercase; color: #888; font-weight: bold;">Coming Soon</span>
+            <h3>The 25th Annual Putnam County Spelling Bee</h3>
+            <p class="date-location">April 2026 | Oakwood Building, Ball State University</p>
+            <p>The 25th Annual Putnam County Spelling Bee is a hilarious, heartwarming, and hectic tribute to childhood and all its tribulations, all wrapped up in a Spelling Bee package</p>
+            <br>
+            <a href="https://www.tix.com/ticket-sales/bsu/969" class="show" style="display:inline-block; padding: 10px 20px; text-decoration: none; border: 1px solid #333; color: #333;">Purchase tickets here!</a>
+        </div>
+    </section>
+
+    <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 40px;">
+
+    <section class="upcoming-grid">
+        
+        <div class="upcoming-card">
+            <h4>Stay tuned for more updates!</h4>
+        </div>
+
+    </section>
+
+</main>
+
+</body>
+</html>
