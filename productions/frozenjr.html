@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Frozen Jr. | Tyler Robertson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="../images/websiteImages/PortfolioWebsiteIcon.png" type="image/png">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Production Specific Styles */
+        .production-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .credits-section {
+            display: flex;
+            justify-content: space-between;
+            background: #f9f9f9; /* Subtle contrast */
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            font-family: 'Urbanist', sans-serif;
+        }
+
+        .credits-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .credits-list li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .credits-list strong {
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #333;
+            margin-right: 10px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 768px) {
+            .credits-section {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav class="left-header">
+        <a href="../index.html">Home</a>
+        <a href="../resume.html">Resume</a>
+        <a href="../upnext.html">Up Next</a>
+    </nav>
+
+    <h1 class="title">Tyler Robertson</h1>
+
+    <nav class="right-header">
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="heading">
+    <h2>Frozen Jr.</h2>
+</section>
+
+<main class="production-container">
+    
+    <section class="credits-section">
+        <div>
+            <h3>Production Credits</h3>
+            <ul class="credits-list">
+                <li><strong>Director:</strong> Tyler Robertson</li>
+                <li><strong>Stage Manager:</strong> Arin Anderson</li>
+                <li><strong>Music Direction: </strong> Amy Ziuckovski</li>
+                <li><strong>Choreography:</strong> Brittany</li>
+                <li><strong>Costume Design:</strong> Lisa Martin</li>
+                <li><strong>Lighting Design:</strong> Jacob Czelusta</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Venue & Date</h3>
+            <ul class="credits-list">
+                <li><strong>Location:</strong> Muncie Civic Theatre</li>
+                <li><strong>Date:</strong> May 2025</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="gallery-grid">
+        <img src="images\Portfolio Stuff\Frozen Jr\TitlePictureFrozen.jpg" alt="Production Photo 0">
+        <img src="images\Portfolio Stuff\Frozen Jr\DSC_1297.jpg" alt="Production Photo 1">
+        <img src="images\Portfolio Stuff\Frozen Jr\DSC_1319.jpg" alt="Production Photo 2">
+        <img src="images\Portfolio Stuff\Frozen Jr\DSC_1340.jpg" alt="Production Photo 3">
+        <img src="images\Portfolio Stuff\Frozen Jr\DSC_1356.jpg" alt="Production Photo 4">
+        <img src="images\Portfolio Stuff\Frozen Jr\DSC_1362.jpg" alt="Production Photo 5">
+        <img src="images\Portfolio Stuff\Frozen Jr\DSC_1380.jpg" alt="Production Photo 6">
+        <img src="images\Portfolio Stuff\Frozen Jr\DSC_1416.jpg" alt="Production Photo 7">
+        <img src="images\Portfolio Stuff\Frozen Jr\DSC_1447.jpg" alt="Production Photo 8">
+        <img src="images\Portfolio Stuff\Frozen Jr\DSC_1474.jpg" alt="Production Photo 9">
+        <img src="images\Portfolio Stuff\Frozen Jr\DSC_1496.jpg" alt="Production Photo 10">
+        <img src="images\Portfolio Stuff\Frozen Jr\DSC_1509.jpg" alt="Production Photo 11">
+        <img src="images\Portfolio Stuff\Frozen Jr\DSC_1513.jpg" alt="Production Photo 12">
+        <img src="images\Portfolio Stuff\Frozen Jr\DSC_1526.jpg" alt="Production Photo 13">
+    </section>
+
+</main>
+
+</body>
+</html>
