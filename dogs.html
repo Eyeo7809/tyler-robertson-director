@@ -2,66 +2,80 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Gallery | Tyler Robertson</title>
+    <title>Galleries | Tyler Robertson</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="icon" href="images/websiteImages/PortfolioWebsiteIcon.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .gallery-container {
+        .production-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 20px;
             font-family: 'Urbanist', sans-serif;
         }
 
-        /* Container for each pair of images */
-        .gallery-row {
-            display: flex;
-            gap: 40px;
-            margin-bottom: 60px; /* Space between the two rows */
-            justify-content: center;
+        .gallery-wrapper {
+            margin-bottom: 80px;
         }
 
-        .gallery-item {
-            flex: 1;
-            text-align: center;
-        }
-
-        .gallery-item img {
+        .main-stage {
             width: 100%;
-            height: auto;
-            border-radius: 4px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            display: block;
-            margin-bottom: 15px;
-            transition: transform 0.3s ease; /* Subtle hover effect */
+            height: 600px;
+            background: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 30px;
         }
 
-        .gallery-item img:hover {
-            transform: translateY(-5px);
+        .main-stage img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: opacity 0.3s ease;
         }
 
-        .image-label {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #333;
+        /* The New Label Style */
+        .filmstrip-label {
+            font-size: 0.9rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            color: #555;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
         }
 
-        /* Mobile Responsiveness */
+        .filmstrip {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 10px 0;
+            scrollbar-width: thin;
+        }
+
+        .filmstrip img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 4px;
+            opacity: 0.5;
+            transition: 0.3s;
+        }
+
+        .filmstrip img:hover, .filmstrip img.active {
+            opacity: 1;
+            box-shadow: 0 0 0 2px #333;
+        }
+
         @media (max-width: 768px) {
-            .gallery-row {
-                flex-direction: column;
-                gap: 40px;
-                margin-bottom: 40px;
-            }
-            .gallery-item {
-                max-width: 500px;
-                margin: 0 auto;
-            }
+            .main-stage { height: 350px; }
         }
     </style>
 </head>
@@ -74,44 +88,70 @@
         <a href="resume.html">Resume</a>
         <a href="upnext.html">Up Next</a>
     </nav>
-
     <h1 class="title">Tyler Robertson</h1>
-
     <nav class="right-header">
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
     </nav>
 </header>
 
-<main class="gallery-container">
+<main class="production-container">
     
-    <!-- First Row -->
-    <div class="gallery-row">
-        <div class="gallery-item">
-            <img src="images/AboutStuff/dogs/bigElla1.jpeg" alt="Description">
-            <div class="image-label">Ella</div>
+    <!-- GALLERY ONE -->
+    <section class="gallery-wrapper">
+        <div class="main-stage">
+            <img id="stage-1" src="images/AboutStuff/dogs/bigFrodo1.jpeg" alt="Featured Photo">
         </div>
 
-        <div class="gallery-item">
-            <img src="images/AboutStuff/dogs/bigElla2.jpeg" alt="Description">
-            <div class="image-label">Ella</div>
+        <div class="filmstrip-label">Frodo</div>
+        
+        <div class="filmstrip">
+            <img src="images/AboutStuff/dogs/bigFrodo1.jpeg" class="active" onclick="switchPhoto('stage-1', this)">
+            <img src="images/AboutStuff/dogs/bigFrodo2.jpeg" onclick="switchPhoto('stage-1', this)">
+            <img src="images/AboutStuff/dogs/bbFrodo1.jpeg" onclick="switchPhoto('stage-1', this)">
+            <img src="images/AboutStuff/dogs/bbFrodo2.jpeg" onclick="switchPhoto('stage-1', this)">
+            <img src="images/AboutStuff/dogs/bbFrodo3.jpeg" onclick="switchPhoto('stage-1', this)">
+            <!-- Add more photos as needed -->
         </div>
-    </div>
+    </section>
 
-    <!-- Second Row -->
-    <div class="gallery-row">
-        <div class="gallery-item">
-            <img src="images/row2-image1.jpg" alt="Description">
-            <div class="image-label">Label Three</div>
+    <!-- GALLERY TWO -->
+    <section class="gallery-wrapper">
+        <div class="main-stage">
+            <img id="stage-2" src="images/AboutStuff/dogs/bigElla1.jpeg" alt="Featured Photo">
         </div>
 
-        <div class="gallery-item">
-            <img src="images/row2-image2.jpg" alt="Description">
-            <div class="image-label">Label Four</div>
+        <div class="filmstrip-label">Ella</div>
+
+        <div class="filmstrip">
+            <img src="images/AboutStuff/dogs/bigElla1.jpeg" class="active" onclick="switchPhoto('stage-2', this)">
+            <img src="images/AboutStuff/dogs/bigElla2.jpeg" onclick="switchPhoto('stage-2', this)">
+            <img src="images/AboutStuff/dogs/bbElla1.JPG" onclick="switchPhoto('stage-2', this)">
+            <!-- Add more photos as needed -->
         </div>
-    </div>
+    </section>
 
 </main>
+
+<script>
+    function switchPhoto(stageId, element) {
+        const stage = document.getElementById(stageId);
+        
+        // Fade out transition
+        stage.style.opacity = 0;
+        
+        setTimeout(() => {
+            stage.src = element.src;
+            stage.style.opacity = 1;
+        }, 250);
+
+        // Update active thumbnail state only within this specific filmstrip
+        const parentFilmstrip = element.parentElement;
+        const thumbs = parentFilmstrip.querySelectorAll('img');
+        thumbs.forEach(t => t.classList.remove('active'));
+        element.classList.add('active');
+    }
+</script>
 
 </body>
 </html>
